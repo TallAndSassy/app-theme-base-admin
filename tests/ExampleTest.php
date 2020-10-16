@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace TallAndSassy\AppThemeBaseAdmin\Tests;
 
 class ExampleTest extends TestCase
 {

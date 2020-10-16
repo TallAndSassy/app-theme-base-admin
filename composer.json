@@ -1,11 +1,11 @@
 {
-    "name": "spatie/skeleton",
-    "description": "package_description",
+    "name": "tallandsassy/app-theme-base-admin",
+    "description": "",
     "keywords": [
-        "vendor_name",
-        "package_name"
+        "tallandsassy",
+        "app-theme-base-admin"
     ],
-    "homepage": "https://github.com/vendor_name/package_name",
+    "homepage": "https://github.com/tallandsassy/app-theme-base-admin",
     "license": "MIT",
     "authors": [
         {
@@ -28,13 +28,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "TallAndSassy\\AppThemeBaseAdmin\\": "src",
+            "TallAndSassy\\AppThemeBaseAdmin\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "TallAndSassy\\AppThemeBaseAdmin\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,10 +49,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "TallAndSassy\\AppThemeBaseAdmin\\AppThemeBaseAdminServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "AppThemeBaseAdmin": "TallAndSassy\\AppThemeBaseAdmin\\AppThemeBaseAdminFacade"
             }
         }
     },
