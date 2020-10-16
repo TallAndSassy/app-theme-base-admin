@@ -41,7 +41,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
                 );
             }
 
-             $this->publishes([
+            $this->publishes([
                  __DIR__.'/../resources/public' => public_path('tallandsassy/app-theme-base-admin'),
                 ], ['public']);
 
