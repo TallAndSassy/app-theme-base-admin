@@ -10,6 +10,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get(
 )->name('admin/about');
 
 Route::middleware(['auth:sanctum', 'verified'])->get(
+    '/admin/media',
+    function () {
+        #\TallAndSassy\PageGuide\Http\Controllers\Admin\MenuController::boot();
+        return view('tassy::admin/media/index');
+    }
+)->name('admin/media');
+
+Route::middleware(['auth:sanctum', 'verified'])->get(
+    '/admin/dashboard',
+    function () {
+        #\TallAndSassy\PageGuide\Http\Controllers\Admin\MenuController::boot();
+        return view('tassy::admin/dashboard/index');
+    }
+)->name('admin/dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get(
     '/admin/help',
     function () {
         #\TallAndSassy\PageGuide\Http\Controllers\Admin\MenuController::boot();

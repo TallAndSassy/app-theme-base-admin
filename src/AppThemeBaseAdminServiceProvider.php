@@ -162,11 +162,11 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
 
 
         \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
-            'admin.dashboard' . uniqid(),
+            'admin.dashboard',
             'Dashboard ',
             null,
             'heroicon-o-home',
-            'admin/dashboard'
+            '/admin/dashboard'
         );
 
         \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
@@ -176,7 +176,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             'heroicon-o-pencil',
             null
         )
-            ->pushLink('admin.libary.media2' . uniqid(), 'Media', '/admin/library/media');
+            ->pushLink('admin.media', 'Media', '/admin/media');
 
 
         if (config('app-theme-base-admin.DoSamples')) {
@@ -229,7 +229,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             'Help',
             null,
             'heroicon-o-question-mark-circle',
-            'admin/help'
+            '/admin/help'
         );
 
         // ------- Default lower menus items
@@ -238,14 +238,14 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             'Config',
             null,
             'heroicon-o-cog',
-            'admin/config'
+            '/admin/config'
         );
         \TallAndSassy\PageGuide\MenuTree::singleton('lower')->pushTop(
             'admin.about',
             'About',
             null,
             'fas-info',
-            'admin/about',
+            '/admin/about',
             'w-4 h-5'
         );
     }
