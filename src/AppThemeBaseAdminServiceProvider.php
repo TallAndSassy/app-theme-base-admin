@@ -41,9 +41,12 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
                 );
             }
 
-             $this->publishes([
-                 __DIR__.'/../resources/public' => public_path('tallandsassy/app-theme-base-admin'),
-                ], ['public']);
+            $this->publishes(
+                [
+                    __DIR__ . '/../resources/public' => public_path('tallandsassy/app-theme-base-admin'),
+                ],
+                ['public']
+            );
 
             // Publishing assets.
             /*$this->publishes([
@@ -54,7 +57,6 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             /*$this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/tallandsassy/app-theme-base-admin'),
             ], 'tallandsassy.app-theme-base-admin');*/
-
 
 
             // Registering package commands.
@@ -78,7 +80,8 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
                         if (App::environment(['local', 'testing'])) {
                             // prefixed url to string
                             Route::get(
-                                '/TallAndSassy/AppThemeBaseAdmin/sample_string', // you will absolutely need a prefix in your url
+                                '/TallAndSassy/AppThemeBaseAdmin/sample_string',
+                                // you will absolutely need a prefix in your url
                                 function () {
                                     return "Hello AppThemeBaseAdmin string via blade prefix";
                                 }
@@ -129,7 +132,10 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             );
 
             // global url to controller
-            Route::get('/grok/TallAndSassy/AppThemeBaseAdmin/controller', [AppThemeBaseAdminController::class, 'sample']);
+            Route::get(
+                '/grok/TallAndSassy/AppThemeBaseAdmin/controller',
+                [AppThemeBaseAdminController::class, 'sample']
+            );
         }
         // global url samples -END-
 
@@ -137,13 +143,97 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
 
         // GROK
         if (App::environment(['local', 'testing'])) {
-            \ElegantTechnologies\Grok\GrokWrangler::grokMe(static::class, 'TallAndSassy', 'app-theme-base-admin', 'resources/views/grok', 'tassy');//tassy gets macro'd out
+            \ElegantTechnologies\Grok\GrokWrangler::grokMe(
+                static::class,
+                'TallAndSassy',
+                'app-theme-base-admin',
+                'resources/views/grok',
+                'tassy'
+            );//tassy gets macro'd out
             Route::get('/grok/TallAndSassy/AppThemeBaseAdmin', fn () => view('tassy::grok/index'));
         }
 
         // TODO: Register your livewire components that live in this package here:
         # \Livewire\Livewire::component('tassygroklivewirejet::a-a-nothing',  \TallAndSassy\GrokLivewireJet\Components\DemoUiChunks\AANothing::class);
         // TODO: Add your own other boot related stuff here...
+
+        // Add Top Admin Menus
+        $doSample = false;
+
+            \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
+                'admin.dashboard'. uniqid(),
+                'Dashboard ',
+                null,
+                'heroicon-o-home',
+                'admin/dashboard'
+            );
+
+            \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
+                    'admin.libary',
+                    'Library',
+                    null,
+                    'heroicon-o-pencil',
+                    null
+                )
+                    ->pushLink('admin.libary.media2' . uniqid(), 'Media', '/admin/library/media');
+
+
+            if ($doSample) {
+
+
+
+                \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
+                    'admin.Cafe',
+                    'Cafe',
+                    null,
+                    'heroicon-o-question-mark-circle',
+                    null
+                )
+                    ->pushLink('admin.salad.fruit' . uniqid(), 'Fruit Salad', '/admin/fruit')
+                    ->pushLink('admin.salad.leaf' . uniqid(), 'Lettuce Salad', '/admin/leaf')
+                    ->pushLink('admin.salad.potato' . uniqid(), 'Yucky Salad', '/admin/potato')
+                    ->pushGroup('condiments' . uniqid(), 'Condiments')
+                    ->pushLink(
+                        'admin.condiments.mustard' . uniqid(),
+                        'Hymans Brand Mustard',
+                        '/admin/condiment/mustard'
+                    )
+                    ->pushLink('admin.condiments.catsup' . uniqid(), 'Ketchup', '/admin/condiment/catsup')
+                    ->pushGroup('condiments2' . uniqid(), 'Condiments2')
+                    ->pushLink(
+                        'admin.condiments.mustard2' . uniqid(),
+                        'Hymans Brand Mustar2d',
+                        '/admin/condiment/mustard'
+                    )
+                    ->pushLink('admin.condiments.catsup2' . uniqid(), 'Ketchup2', '/admin/condiment/catsup')
+                    ->pushTop(
+                        'admin.postsalaasdf' . uniqid(),
+                        'Cafeteria',
+                        null,
+                        'zondicon-location-food',
+                        '/admin/cafeteria'
+                    )
+                    ->pushTop('admin.postsala2dfgd' . uniqid(), 'Justice', null, 'heroicon-o-scale', null)
+                    ->pushLink('admin.condiments.catsup442' . uniqid(), 'Ketchup2', '/admin/condiment/catsup2')
+                    ->pushLink('admin.condiments.catsup443' . uniqid(), 'Ketchup3', '/admin/condiment/catsup3')
+                    ->pushLink('admin.condiments.catsup444' . uniqid(), 'Ketchup4', '/admin/condiment/catsup4')
+                    ->pushTop('admin.postsala444' . uniqid(), 'Trials', null, 'heroicon-o-scale', null)
+                    ->pushTop(
+                        'admin.postsala444' . uniqid(),
+                        'Liberty',
+                        null,
+                        'heroicon-o-scale',
+                        '/admin/condiment/postsala444'
+                    );
+            }
+            \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
+                'admin.help',
+                'Help',
+                null,
+                'heroicon-o-question-mark-circle',
+                'admin/help'
+            );
+
     }
 
     public function register()
