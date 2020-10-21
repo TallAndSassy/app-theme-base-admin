@@ -158,7 +158,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
         // TODO: Add your own other boot related stuff here...
 
         // Add Top Admin Menus
-        $doSample = false;
+
 
             \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
                 'admin.dashboard'. uniqid(),
@@ -178,7 +178,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
                     ->pushLink('admin.libary.media2' . uniqid(), 'Media', '/admin/library/media');
 
 
-            if ($doSample) {
+            if (config('app-theme-base-admin.DoSamples')) {
 
 
 
