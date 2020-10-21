@@ -231,6 +231,23 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             'heroicon-o-question-mark-circle',
             'admin/help'
         );
+
+        // ------- Default lower menus items
+        \TallAndSassy\PageGuide\MenuTree::singleton('lower')->pushTop(
+            'admin.config',
+            'Config',
+            null,
+            'heroicon-o-cog',
+            'admin/config'
+        );
+        \TallAndSassy\PageGuide\MenuTree::singleton('lower')->pushTop(
+            'admin.about',
+            'About',
+            null,
+            'fas-info',
+            'admin/about',
+            'w-4 h-5'
+        );
     }
 
     public function register()
