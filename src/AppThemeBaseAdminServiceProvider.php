@@ -246,7 +246,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             null,
             'fas-info',
             '/admin/about',
-            'w-4 h-5'
+            'w-4 h-5 mx-auto'
         );
     }
 
