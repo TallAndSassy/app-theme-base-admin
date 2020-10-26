@@ -1,3 +1,3 @@
-<x-tassy::page-admin title="Config">
+<div>
     Config body goes here.
-</x-tassy::page-admin>
+</div>

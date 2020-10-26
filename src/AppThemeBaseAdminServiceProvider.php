@@ -163,7 +163,7 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
 
         \TallAndSassy\PageGuide\MenuTree::singleton('upper')->pushTop(
             'admin.dashboard',
-            'Dashboard ',
+            'Dashboard',
             null,
             'heroicon-o-home',
             '/admin/dashboard'
@@ -248,6 +248,9 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
             '/admin/about',
             'w-4 h-5 mx-auto'
         );
+
+        // Temp
+        \Livewire\Livewire::component('tassy::livewire.polling-card',  \TallAndSassy\AppThemeBaseAdmin\Components\PollingCard::class);
     }
 
     public function register()

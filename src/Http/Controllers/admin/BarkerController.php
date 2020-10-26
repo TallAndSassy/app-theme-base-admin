@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TallAndSassy\AppThemeBaseAdmin\Http\Controllers;
+namespace TallAndSassy\AppThemeBaseAdmin\Http\Controllers\Admin;
 
 class AppThemeBaseAdminController
 {

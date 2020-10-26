@@ -1,4 +1,4 @@
-<x-tassy::page-admin title="Media Library">
+<div>
     Probably from here.
     https://github.com/spatie/laravel-medialibrary
-</x-tassy::page-admin>
+</div>

@@ -1,4 +1,4 @@
-<x-tassy::page-admin title="About">
+<div>
 
    <?php
   $dlWrapperShort = "sm:col-span-1";
@@ -93,4 +93,5 @@
 </div>
  </div>
 
-</x-tassy::page-admin>
+</div>
+
