@@ -2,7 +2,6 @@
 
 namespace TallAndSassy\AppThemeBaseAdmin\Http\Controllers\Admin;
 
-
 class HelpController extends \TallAndSassy\PageGuide\Http\Controllers\Admin\AdminBaseController
 {
     public const viewRef = "tassy::admin/help/index";

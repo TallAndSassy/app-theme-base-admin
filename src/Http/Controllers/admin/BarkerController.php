@@ -10,4 +10,3 @@ class AppThemeBaseAdminController
         return 'Hello AppThemeBaseAdmin from: '.__METHOD__;
     }
 }
-
