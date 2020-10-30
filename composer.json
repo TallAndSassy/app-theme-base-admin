@@ -17,7 +17,9 @@
     ],
     "require": {
         "php": "^7.4",
-        "illuminate/contracts": "^8.0"
+        "illuminate/contracts": "^8.0",
+
+        "tallandsassy/app-theme-base": "master-dev"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
