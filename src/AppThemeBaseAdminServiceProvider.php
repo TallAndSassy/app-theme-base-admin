@@ -251,6 +251,10 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
 
         // Temp
         \Livewire\Livewire::component('tassy::livewire.polling-card',  \TallAndSassy\AppThemeBaseAdmin\Components\PollingCard::class);
+
+        // Dashboard
+        \Livewire\Livewire::component('tassy::cards.simple-stat',  \TallAndSassy\AppThemeBaseAdmin\Http\Livewire\Cards\SimpleStat::class);
+
     }
 
     public function register()
