@@ -1,5 +1,6 @@
 <?php
-Route::get('/admin', fn () => redirect('/admin/dashboard'));
+
+Route::get('/admin', fn() => redirect('/admin/dashboard'));
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get(
@@ -9,11 +10,21 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->where('sublevels', '.*');
 
 
+//Route::middleware(['auth:sanctum', 'verified'])
+//    ->get(
+//        '/admin/people/users/{sublevels?}',
+//        [\TallModSassy\AdminUsers\Http\Controllers\UsersPageController::class, 'getFrontView']
+//    )
+//    ->where('sublevels', '.*');
+
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get(
         '/admin/dashboard/{sublevels?}',
-        [\TallAndSassy\AppThemeBaseAdmin\Http\Controllers\Admin\DashboardController::class, 'getFrontView'] // syntax works
+        [
+            \TallAndSassy\AppThemeBaseAdmin\Http\Controllers\Admin\DashboardController::class,
+            'getFrontView'
+        ] // syntax works
     )
     ->where('sublevels', '.*');
 
@@ -57,3 +68,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get(
 //        return view('tassy::admin/dev/index');
 //    }
 //)->name('admin/dev');
+// works require_once(base_path('modules/admin-users/routes/web.php'));
