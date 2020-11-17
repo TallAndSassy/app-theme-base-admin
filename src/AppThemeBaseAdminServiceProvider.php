@@ -254,7 +254,6 @@ class AppThemeBaseAdminServiceProvider extends ServiceProvider
 
         // Dashboard
         \Livewire\Livewire::component('tassy::cards.simple-stat',  \TallAndSassy\AppThemeBaseAdmin\Http\Livewire\Cards\SimpleStat::class);
-
     }
 
     public function register()

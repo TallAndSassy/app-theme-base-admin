@@ -22,12 +22,15 @@ class DashboardController extends \TallAndSassy\PageGuide\Http\Controllers\Admin
         return static::$mes[$handle];
     }
 
-    public function push($objCard) : self {
+    public function push($objCard) : self
+    {
         $this->stack[] = $objCard;
+
         return $this;
     }
 
-    public function getAll(): array {
+    public function getAll(): array
+    {
         return $this->stack;
     }
 }
